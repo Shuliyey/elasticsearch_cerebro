@@ -27,5 +27,6 @@ docker run -it -d \
   -v elasticsearch/config:/usr/share/elasticsearch/config \
   -v elasticsearch/data:/usr/share/elasticsearch/data \
   -v cerebro/conf:/usr/share/cerebro/default/conf \
+  -v supervisord.conf:/etc/supervisor/conf.d/supervisord.conf \
   elasticsearch_cerebro:<tag> 
 ```
