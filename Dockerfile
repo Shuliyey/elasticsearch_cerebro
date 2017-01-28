@@ -21,7 +21,9 @@ RUN useradd -M -s /bin/false cerebro \
 # Clean up
 RUN rm /tmp/cerebro-$CEREBRO_VERSION.tgz && rm -rf /var/lib/apt/lists/*
 
-VOLUME ["/usr/share/elasticsearch/data", "/usr/share/elasticsearch/config", "/usr/share/cerebro/default/conf"]
+WORKDIR /etc/supervisor
+
+VOLUME ["/usr/share/elasticsearch/data", "/usr/share/elasticsearch/config", "/usr/share/cerebro/default/conf", "/etc/supervisor/conf.d"]
 
 EXPOSE 9000 9200 9300
 
