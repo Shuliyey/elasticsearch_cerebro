@@ -17,7 +17,7 @@ RUN wget -qO /tmp/cerebro-$CEREBRO_VERSION.tgz "https://github.com/lmenezes/cere
   && ln -s /usr/share/cerebro/latest /usr/share/cerebro/default
 
 # Clean up
-RUN rm /tmp/* && rm -rf /var/lib/apt/lists/*
+RUN rm /tmp/cerebro-$CEREBRO_VERSION.tgz && rm -rf /var/lib/apt/lists/*
 
 VOLUME ["/usr/share/elasticsearch/data", "/usr/share/elasticsearch/config", "/usr/share/cerebro/default/conf"]
 
