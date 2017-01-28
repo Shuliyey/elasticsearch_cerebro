@@ -15,7 +15,7 @@ RUN useradd -r -s /bin/false cerebro \
   && mkdir -p /usr/share/cerebro \
   && tar xvf /tmp/cerebro-$CEREBRO_VERSION.tgz -C /usr/share/cerebro \
   && ln -s /usr/share/cerebro/cerebro-$CEREBRO_VERSION /usr/share/cerebro/latest \
-  && ln -s /usr/share/cerebro/latest /usr/share/cerebro/default
+  && ln -s /usr/share/cerebro/latest /usr/share/cerebro/default \
   && chown -R cerebro:cerebro /usr/share/cerebro
 
 # Clean up
