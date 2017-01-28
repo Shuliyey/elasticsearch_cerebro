@@ -16,7 +16,16 @@ cd elasticsearch_cerebro
 ```
 
 ## 2.4 Build docker image
-docker build -t elasticsearch\_cerebro:<tag> .
+```bash
+docker build -t elasticsearch_cerebro:<tag> .
+```
 
 ## 2.5 Run docker container
-docker run -it -d elasticsearch\_cerebro:<tag>
+```bash
+docker run -it -d \
+  -p 9000:9000 -p 9300:9300 -p 9200:9200 \
+  -v elasticsearch/config:/usr/share/elasticsearch/config \
+  -v elasticsearch/data:/usr/share/elasticsearch/data \
+  -v cerebro/conf:/usr/share/cerebro/default/conf \
+  elasticsearch_cerebro:<tag> 
+```
