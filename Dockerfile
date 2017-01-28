@@ -10,7 +10,9 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Install cerebro
 ENV CEREBRO_VERSION 0.5.0
-RUN wget -qO /tmp/cerebro-$CEREBRO_VERSION.tgz "https://github.com/lmenezes/cerebro/releases/download/v$CEREBRO_VERSION/cerebro-$CEREBRO_VERSION.tgz" \
+RUN useradd -r cerebro \
+  && usermod -L cerebro \
+  && wget -qO /tmp/cerebro-$CEREBRO_VERSION.tgz "https://github.com/lmenezes/cerebro/releases/download/v$CEREBRO_VERSION/cerebro-$CEREBRO_VERSION.tgz" \
   && mkdir -p /usr/share/cerebro \
   && tar xvf /tmp/cerebro-$CEREBRO_VERSION.tgz -C /usr/share/cerebro \
   && ln -s /usr/share/cerebro/cerebro-$CEREBRO_VERSION /usr/share/cerebro/latest \
