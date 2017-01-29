@@ -7,6 +7,10 @@ https://docs.docker.com/engine/installation/
 
 ## 2.2 Pull down the git repo
 ```bash
+git clone https://github.com/Shuliyey/elasticsearch_cerebro.git
+```
+if you are contributing to the repo, once you are added as collaborator, and your ssh-key is added to the project
+```bash
 git clone git@github.com:Shuliyey/elasticsearch_cerebro.git
 ```
 
